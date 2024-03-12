@@ -17,7 +17,7 @@ int main(){
     vector<int> arr = {2 ,4 ,6 ,8};
     // Node y = Node {arr[0] , nullptr};
 
-     Node* y = new Node {arr[0] , nullptr};
+     Node* y = new Node {arr[0] , NULL};
     // cout<< y.data;
     // cout<< y.next;
     cout<< y->data;
