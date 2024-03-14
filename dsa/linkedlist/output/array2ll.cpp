@@ -32,7 +32,7 @@ Node* convertArr2LL(vector<int> &arr){
 int main(){
     vector<int> arr = {12 , 5 ,6 , 7};
 
-    Node* head = convertArr2LL(arr);
-    cout<< head->data;
+    Node* sachin = convertArr2LL(arr);
+    cout<< sachin->data;
 
 }

@@ -34,7 +34,7 @@ int main(){
 
     Node* head = convertArr2LL(arr);
     Node* temp = head ;
-    while(temp){
+    while(temp != NULL){
         cout<< temp ->data << " ";
         temp = temp-> next;
     }
