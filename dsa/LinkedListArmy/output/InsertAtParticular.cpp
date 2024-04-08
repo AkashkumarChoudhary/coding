@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cstddef> 
 using namespace std;
 
 class Node
@@ -17,15 +18,13 @@ class Node
 Node CreateLinkedList (int arr[],int index, int size)
 {
     // Base case
-    if(index == size)
-    return NULL;
+    if (index == size)
+        return NULL;
 
-    Node* temp;
-    temp = new Node(arr[index]);
-    temp->next = CreateLinkedList(arr, index+1 , size);
+     Node *temp = new Node(arr[index]);
+    temp->next = CreateLinkedList(arr, index + 1, size);
 
     return temp;
-
 }
 
 int main()
@@ -39,7 +38,6 @@ int main()
 
     // Insert Node at particular Position
     int x = 3; //Insert POsition
-
     int value = 30;
 
     Node* temp = Head;
@@ -51,6 +49,17 @@ int main()
 
     };
 
-    Node* temp2 = 
+    Node* temp2 =  new Node(value);
+    temp2->next = temp->next;
+    temp->next = temp2;
+
+    // print the  value
+    
+    temp =Head;
+    while(temp)
+    {
+        cout << temp -> data << " ";
+        temp = temp->next ;
+    }
 
 }
