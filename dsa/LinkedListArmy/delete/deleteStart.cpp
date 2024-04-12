@@ -27,3 +27,11 @@ Node *CreateLinkedList (int arr[] , int index , int size)
 } 
 
 
+int main ()
+{
+    Node* Head ;
+    Head = NULL;
+    int arr [ ] = { 2, 5 , 6  ,1 ,7};
+
+    Head = 
+}
