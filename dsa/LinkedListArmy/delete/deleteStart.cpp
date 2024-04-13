@@ -33,5 +33,22 @@ int main ()
     Head = NULL;
     int arr [ ] = { 2, 5 , 6  ,1 ,7};
 
-    Head = 
+    Head = CreateLinkedList (arr , 0 , 5);
+
+    // Delete a Node at start
+
+    if(Head != NULL)
+    {
+        Node* temp = Head ;
+        Head = Head -> next;
+        delete temp;
+
+    }
+
+    
+    while(Head)
+    {
+        cout << Head -> data << " ";
+        Head  = Head->next ;
+    }
 }
