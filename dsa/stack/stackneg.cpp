@@ -8,14 +8,16 @@ class Stack {
     int *arr ;
     int size;
     int top;
-
     public:
+    
+    bool flag ;
 
     // constructor
     Stack(int s){
         arr = new int [s];
         size = s; 
         top = -1 ;
+        flag = 1;
     }
 //   push
   void push (int value){
@@ -26,6 +28,7 @@ class Stack {
         top++;
         arr[top]= value;
         cout<< "pushed " << value << " into the stack\n"; 
+        flag =0;
     }
   }
 // pop
@@ -37,6 +40,8 @@ void pop (){
     else{
         cout<< "popped "<< arr[top] << " from the stack"<<endl; 
         top--;
+        if(top == -1)
+        flag =1;
     }
 }
 // peek
@@ -62,25 +67,12 @@ int IsSize(){
 }
 
 };
-
-
-int main(){
-
-    Stack S(5);
-    S.push(3);
-    S.push(2);
-    S.push(7);
-    S.push(9);
-    S.push(4);
-    // S.push(4);
-    S.pop();
-    S.pop();
-    S.pop();
-    // S.pop();
-    // S.pop();
-    // S.pop();
-     
-    cout<< S.peek()<<endl;
-    cout<< S.IsEmpty()<<endl;
-     cout<< S.IsSize()<<endl;
+int main (){
+    Stack   S(5);
+    S.push(-1);
+    // cout<< S.peek() <<endl;
+    int value = S.peek();
+    if(S.flag == 0){
+        cout<< value<< endl;
+    }
 }

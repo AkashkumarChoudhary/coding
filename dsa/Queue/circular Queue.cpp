@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Implement queue using array
+// Implement circularQueue using array
 
 class Queue
 {
@@ -27,7 +27,7 @@ class Queue
     // Queue is full or not
     bool IsFull()
     {
-         return rear == size -1;
+         return (rear+1 ) % size == front;
     }
 
     // push element into queue, and
@@ -49,7 +49,7 @@ class Queue
             }
         // insert
         else{
-            rear = rear +1;
+            rear = (rear +1)%size;
             arr[rear ] = x;
             cout<< "Pushed " << x << " into the Queue\n" ;
         }
@@ -70,12 +70,12 @@ class Queue
         if(front == rear)
         {
             cout<<"Popped " << arr[front] << "into the Queue\n" ;
-             front = rear = -1;
+            front = rear = -1;
         }
         else
         {
-            cout<< "Popped" << arr[front]<< "Into the Queue\n";
-            front = front +1;
+            cout<< "Popped " << arr[front]<< " Into the Queue\n";
+           front = (front +1)%size;
         }
     }
 }
@@ -99,14 +99,14 @@ int main()
     q.push(4);
     q.push(40);
     q.push(14);
+    q.push(18);
+    q.push(19);
+    q.pop();
+    q.push(21);
+    q.pop();
+    q.pop();
      
-    
-    q.pop();
-    q.pop();
-    q.pop();
      
-     int x = q.start();
-     if(!q.IsEmpty())
-     cout<< x<< " ";
-    // cout<< q.start() << endl;
+     
+     
 }
